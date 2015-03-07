@@ -37,6 +37,10 @@ public class MockResponse implements HttpServletResponse {
         // TODO Auto-generated method stub
 
     }
+    
+    public String getResponseContent() {
+    	return getMockServletOutputStream().asString().toString();
+    }
 
     public int getBufferSize() {
         // TODO Auto-generated method stub

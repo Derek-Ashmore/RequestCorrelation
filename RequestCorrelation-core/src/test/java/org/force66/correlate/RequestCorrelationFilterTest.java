@@ -33,6 +33,7 @@ public class RequestCorrelationFilterTest {
 		filterConfig.addInitParameter(RequestCorrelationFilter.INIT_PARM_CORRELATION_ID_HEADER, "requestId");
 		
 		filterChain = new MockFilterChain();
+		filterChain.setOutputData("Hello".getBytes());
 		
 		request = new MockRequest();
 		response = new MockResponse();
@@ -57,6 +58,7 @@ public class RequestCorrelationFilterTest {
 		filter.init(filterConfig);
 		filter.doFilter(request, response, filterChain);
 		Assert.assertTrue(RequestCorrelationContext.getCurrent().getCorrelationId() != null);
+		Assert.assertTrue(response.getResponseContent().contains("Hello"));
 		
 		request.setHeader("requestId", "foo");
 		filter.doFilter(request, response, filterChain);

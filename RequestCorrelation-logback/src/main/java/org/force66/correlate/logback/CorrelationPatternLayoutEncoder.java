@@ -22,13 +22,25 @@ import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
  *
  */
 public class CorrelationPatternLayoutEncoder extends PatternLayoutEncoder {
+	
+	public CorrelationPatternLayoutEncoder() {
+		
+	}
 
 	@Override
 	public void start() {
-		super.start();
-		PatternLayout localLayout = (PatternLayout)this.layout;
-		localLayout.defaultConverterMap.put("id", CorrelationConverter.class.getName());
-		localLayout.defaultConverterMap.put("correlationId", CorrelationConverter.class.getName());
+
+		PatternLayout patternLayout = new PatternLayout();
+		patternLayout.getDefaultConverterMap().put("id", CorrelationConverter.class.getName());
+	    patternLayout.getDefaultConverterMap().put("correlationId", CorrelationConverter.class.getName());
+	    patternLayout.setContext(context);
+	    patternLayout.setPattern(getPattern());
+	    patternLayout.setOutputPatternAsHeader(outputPatternAsHeader);	    
+	    patternLayout.start();
+	    this.layout = patternLayout;
+	    this.started = true;
+	    
+	    System.out.println("custom encoder started");
 	}
 
 

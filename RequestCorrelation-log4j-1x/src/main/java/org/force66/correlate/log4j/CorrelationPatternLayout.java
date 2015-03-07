@@ -13,20 +13,22 @@
  */
 package org.force66.correlate.log4j;
 
-import org.apache.log4j.helpers.PatternConverter;
-import org.apache.log4j.spi.LoggingEvent;
-import org.force66.correlate.RequestCorrelationContext;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.helpers.PatternParser;
 
 /**
- * Supplies the current correlation id for Log4J.
+ * Log4J pattern layout that uses enhanced Parser to inject the correlation id in log messages.  Use %I
+ * in the pattern to provide the correlation id in log messages.
+ * Sample pattern:
+ * <li>%d{yyyy-MM-dd HH:mm:ss} %I %-5p %c{1}:%L - %m%n</li>
  * @author D. Ashmore
  *
  */
-public class CorrelationPatternConverter extends PatternConverter {
+public class CorrelationPatternLayout extends PatternLayout {
 
 	@Override
-	protected String convert(LoggingEvent event) {
-		return RequestCorrelationContext.getCurrent().getCorrelationId();
+	protected PatternParser createPatternParser(String pattern) {
+		return new CorrelationPatternParser(pattern);
 	}
 
 }

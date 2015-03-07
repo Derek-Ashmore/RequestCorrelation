@@ -52,7 +52,7 @@ public class MockFilterChain implements FilterChain {
             response.setContentType(contentType);
         }
         if (outputData != null) {
-            response.setContentLength(contentType.length());
+            response.setContentLength(outputData.toString().length());
             response.getOutputStream().write(outputData);
         }
         
