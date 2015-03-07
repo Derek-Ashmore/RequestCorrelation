@@ -172,4 +172,10 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<description>This project is a Java library that facilitates establishing and tracking correlation ids for micro-services.</description>
+	<url>${project.url}</url>
+	<scm>
+		<url>${project.url}/RequestCorrelation-core</url>
+		<connection>scm:git:${project.url}/RequestCorrelation-core</connection>
+	</scm>
 </project>

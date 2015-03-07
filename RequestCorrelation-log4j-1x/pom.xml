@@ -155,4 +155,10 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<description>This project is a Java library that facilitates logging correlation ids for micro-services using log4j.</description>
+	<url>${project.url}</url>
+	<scm>
+		<url>${project.url}/RequestCorrelation-log4j-1x</url>
+		<connection>scm:git:${project.url}/RequestCorrelation-log4j-1x</connection>
+	</scm>
 </project>

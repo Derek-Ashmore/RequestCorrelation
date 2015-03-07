@@ -8,6 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.version>1.0.0-rc1</project.version>
+		<project.url>https://github.com/Derek-Ashmore/RequestCorrelation.git</project.url>
 	</properties>
 
 	<packaging>pom</packaging>
@@ -16,4 +17,16 @@
 		<module>RequestCorrelation-log4j-1x</module>
 		<module>RequestCorrelation-logback</module>
 	</modules>
+	<description>This project is a Java library that facilitates establishing and tracking correlation ids for micro-services.</description>
+	<licenses>
+	  <license>
+	    <name>The Apache Software License, Version 2.0</name>
+	    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+	  </license>
+	</licenses>
+	<scm>
+		<url>${project.url}</url>
+		<connection>scm:git:${project.url}</connection>
+	</scm>
+	<url>${project.url}</url>
 </project>
