@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>RequestCorrelation</groupId>
 		<artifactId>RequestCorrelation</artifactId>
-		<version>0.0.1-BETA</version>
+		<version>${project.version}</version>
 	</parent>
 	<groupId>RequestCorrelation-logback</groupId>
 	<artifactId>RequestCorrelation-logback</artifactId>
@@ -13,7 +13,7 @@
 		<dependency>
 			<groupId>RequestCorrelation-core</groupId>
 			<artifactId>RequestCorrelation-core</artifactId>
-			<version>0.0.1-BETA</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>

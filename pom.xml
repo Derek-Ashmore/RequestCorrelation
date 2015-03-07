@@ -3,10 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>RequestCorrelation</groupId>
 	<artifactId>RequestCorrelation</artifactId>
-	<version>0.0.1-BETA</version>
+	<version>${project.version}</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.version>1.0.0-rc1</project.version>
 	</properties>
 
 	<packaging>pom</packaging>
