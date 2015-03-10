@@ -13,6 +13,10 @@
  */
 package org.force66.correlate;
 
+import org.force66.mock.servletapi.MockFilterChain;
+import org.force66.mock.servletapi.MockFilterConfig;
+import org.force66.mock.servletapi.MockRequest;
+import org.force66.mock.servletapi.MockResponse;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

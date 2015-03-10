@@ -7,7 +7,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.version>1.0.0-rc1</project.version>
+		<project.version>1.0.0-rc2</project.version>
 		<project.url>https://github.com/Derek-Ashmore/RequestCorrelation.git</project.url>
 	</properties>
 
