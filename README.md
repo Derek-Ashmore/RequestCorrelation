@@ -59,7 +59,7 @@ A sample web.xml filter configuration is as follows:
 	
 ```
 
-For work that is initiated either by a message receiver or batch job, ensure that a line of code like the following gets executed:  
+For work that is initiated either by a message receiver or batch job, ensure that a line of code like the following gets executed in the thread performing the work (the correlation id is stored using a ThreadLocal):  
 ```  
 
 RequestCorrelationContext.getCurrent().setCorrelationId(correlationId);  
