@@ -147,6 +147,25 @@
 								<mkdir dir="target/mavenrepo" />
 								<copy file="pom.xml"
 									tofile="target/mavenrepo/${project.name}-${project.version}.pom" />
+								<replace
+									file="target/mavenrepo/${project.name}-${project.version}.pom">
+									<replacefilter>
+										<replacetoken>$</replacetoken>
+										<replacevalue>#</replacevalue>
+									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{project.version}</replacetoken>
+										<replacevalue>${project.version}</replacevalue>
+									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{project.url}</replacetoken>
+										<replacevalue>${project.url}</replacevalue>
+									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{project.name}</replacetoken>
+										<replacevalue>${project.name}</replacevalue>
+									</replacefilter>
+								</replace>
 
 								<copy todir="target/mavenrepo">
 									<fileset dir="target" includes="*.jar" />
