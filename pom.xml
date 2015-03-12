@@ -10,6 +10,12 @@
 		<project.version>1.0.0-rc2</project.version>
 		<project.url>https://github.com/Derek-Ashmore/RequestCorrelation.git</project.url>
 	</properties>
+	
+	<developers>
+		<developer>
+			<name>Derek C. Ashmore</name>
+		</developer>
+	</developers>
 
 	<packaging>pom</packaging>
 	<modules>
@@ -119,4 +125,5 @@
 		<connection>scm:git:${project.url}</connection>
 	</scm>
 	<url>${project.url}</url>
+	<name>RequestCorrelation</name>
 </project>
