@@ -262,6 +262,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<name>RequestCorrelation core library</name>
 	<description>This project is a Java library that facilitates establishing and tracking correlation ids for micro-services.</description>
 	<url>${project.url}</url>
 	<scm>

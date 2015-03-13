@@ -238,6 +238,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<name>RequestCorrelation logback library</name>
 	<description>This project is a Java library that facilitates logging correlation ids for micro-services using logback.</description>
 	<url>${project.url}</url>
 	<scm>

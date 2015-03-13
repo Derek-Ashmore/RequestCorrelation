@@ -7,7 +7,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.version>1.0.0-rc2</project.version>
+		<project.version>1.0.0-rc3</project.version>
 		<project.url>https://github.com/Derek-Ashmore/RequestCorrelation.git</project.url>
 	</properties>
 	
@@ -57,6 +57,14 @@
 									<replacefilter>
 										<replacetoken>#{project.name}</replacetoken>
 										<replacevalue>${project.name}</replacevalue>
+									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{project.build.directory}</replacetoken>
+										<replacevalue>${project.build.directory}</replacevalue>
+									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{env.GPG_HOME}</replacetoken>
+										<replacevalue>${env.GPG_HOME}</replacevalue>
 									</replacefilter>
 								</replace>
 

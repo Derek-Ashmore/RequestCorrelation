@@ -237,6 +237,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<name>RequestCorrelation log4j v1.x library</name>
 	<description>This project is a Java library that facilitates logging correlation ids for micro-services using log4j.</description>
 	<url>${project.url}</url>
 	<scm>
