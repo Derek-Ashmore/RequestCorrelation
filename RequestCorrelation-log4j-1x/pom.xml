@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.force66</groupId>
 		<artifactId>RequestCorrelation</artifactId>
-		<version>${project.version}</version>
+		<version>1.0.0-rc3</version>
 	</parent>
 	<artifactId>RequestCorrelation-log4j-1x</artifactId>
 	<dependencies>
@@ -146,9 +146,9 @@
 								<fail if="${env.GPG_HOME}" message="GPG_HOME environment variable not defined." />
 								<mkdir dir="target/mavenrepo" />
 								<copy file="pom.xml"
-									tofile="target/mavenrepo/${project.name}-${project.version}.pom" />
+									tofile="target/mavenrepo/${artifactId}-${project.version}.pom" />
 								<replace
-									file="target/mavenrepo/${project.name}-${project.version}.pom">
+									file="target/mavenrepo/${artifactId}-${project.version}.pom">
 									<replacefilter>
 										<replacetoken>$</replacetoken>
 										<replacevalue>#</replacevalue>
@@ -165,6 +165,10 @@
 										<replacetoken>#{project.name}</replacetoken>
 										<replacevalue>${project.name}</replacevalue>
 									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{artifactId}</replacetoken>
+										<replacevalue>${artifactId}</replacevalue>
+									</replacefilter>
 								</replace>
 
 								<copy todir="target/mavenrepo">
@@ -177,7 +181,7 @@
 									<arg line="gpg2.exe" />
 									<arg line="-ab" />
 									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}.pom" />
+										line="${project.build.directory}\mavenrepo\${artifactId}-${project.version}.pom" />
 								</exec>
 								<exec executable="cmd" dir="target/mavenrepo">
 									<env key="PATH" path="${env.GPG_HOME}" />
@@ -185,7 +189,7 @@
 									<arg line="gpg2.exe" />
 									<arg line="-ab" />
 									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}.jar" />
+										line="${project.build.directory}\mavenrepo\${artifactId}-${project.version}.jar" />
 								</exec>
 								<exec executable="cmd" dir="target/mavenrepo">
 									<env key="PATH" path="${env.GPG_HOME}" />
@@ -193,7 +197,7 @@
 									<arg line="gpg2.exe" />
 									<arg line="-ab" />
 									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}-javadoc.jar" />
+										line="${project.build.directory}\mavenrepo\${artifactId}-${project.version}-javadoc.jar" />
 								</exec>
 								<exec executable="cmd" dir="target/mavenrepo">
 									<env key="PATH" path="${env.GPG_HOME}" />
@@ -201,9 +205,9 @@
 									<arg line="gpg2.exe" />
 									<arg line="-ab" />
 									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}-sources.jar" />
+										line="${project.build.directory}\mavenrepo\${artifactId}-${project.version}-sources.jar" />
 								</exec>
-								<jar destfile="target/${project.name}-${project.version}-bundle.jar">
+								<jar destfile="target/${artifactId}-${project.version}-bundle.jar">
 									<fileset dir="target/mavenrepo" includes="*.jar" />
 									<fileset dir="target/mavenrepo" includes="*.pom" />
 									<fileset dir="target/mavenrepo" includes="*.asc" />
@@ -238,10 +242,11 @@
 		</plugins>
 	</reporting>
 	<name>RequestCorrelation log4j v1.x library</name>
+	<packaging>jar</packaging>
 	<description>This project is a Java library that facilitates logging correlation ids for micro-services using log4j.</description>
 	<url>${project.url}</url>
 	<scm>
-		<url>${project.url}/RequestCorrelation-log4j-1x</url>
-		<connection>scm:git:${project.url}/RequestCorrelation-log4j-1x</connection>
+		<url>${project.url}/tree/master/RequestCorrelation-log4j-1x</url>
+		<connection>scm:git:${project.url}/tree/master/RequestCorrelation-log4j-1x</connection>
 	</scm>
 </project>

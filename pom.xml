@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.force66</groupId>
 	<artifactId>RequestCorrelation</artifactId>
-	<version>${project.version}</version>
+	<version>1.0.0-rc3</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,9 +39,9 @@
 								<mkdir dir="target/mavenrepo" />
 
 								<copy file="pom.xml"
-									tofile="target/mavenrepo/${project.name}-${project.version}.pom" />
+									tofile="target/mavenrepo/${artifactId}-${project.version}.pom" />
 								<replace
-									file="target/mavenrepo/${project.name}-${project.version}.pom">
+									file="target/mavenrepo/${artifactId}-${project.version}.pom">
 									<replacefilter>
 										<replacetoken>$</replacetoken>
 										<replacevalue>#</replacevalue>
@@ -66,6 +66,10 @@
 										<replacetoken>#{env.GPG_HOME}</replacetoken>
 										<replacevalue>${env.GPG_HOME}</replacevalue>
 									</replacefilter>
+									<replacefilter>
+										<replacetoken>#{artifactId}</replacetoken>
+										<replacevalue>${artifactId}</replacevalue>
+									</replacefilter>
 								</replace>
 
 
@@ -79,33 +83,9 @@
 									<arg line="gpg2.exe" />
 									<arg line="-ab" />
 									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}.pom" />
+										line="${project.build.directory}\mavenrepo\${artifactId}-${project.version}.pom" />
 								</exec>
-								<exec executable="cmd" dir="target/mavenrepo">
-									<env key="PATH" path="${env.GPG_HOME}" />
-									<arg line="/c" />
-									<arg line="gpg2.exe" />
-									<arg line="-ab" />
-									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}.jar" />
-								</exec>
-								<exec executable="cmd" dir="target/mavenrepo">
-									<env key="PATH" path="${env.GPG_HOME}" />
-									<arg line="/c" />
-									<arg line="gpg2.exe" />
-									<arg line="-ab" />
-									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}-javadoc.jar" />
-								</exec>
-								<exec executable="cmd" dir="target/mavenrepo">
-									<env key="PATH" path="${env.GPG_HOME}" />
-									<arg line="/c" />
-									<arg line="gpg2.exe" />
-									<arg line="-ab" />
-									<arg
-										line="${project.build.directory}\mavenrepo\${project.name}-${project.version}-sources.jar" />
-								</exec>
-								<jar destfile="target/${project.name}-${project.version}-bundle.jar">
+								<jar destfile="target/${artifactId}-${project.version}-bundle.jar">
 									<fileset dir="target/mavenrepo" includes="*.jar" />
 									<fileset dir="target/mavenrepo" includes="*.pom" />
 									<fileset dir="target/mavenrepo" includes="*.asc" />
