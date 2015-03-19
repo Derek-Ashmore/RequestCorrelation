@@ -1,6 +1,8 @@
 RequestCorrelation
 ==================
 
+Note:  this product is deprecated.   Use RequestCorrelationSlf4J instead.
+
 This project is a Java library that facilitates establishing and tracking correlation ids for micro-services.
 
 The objectives are as follows:
